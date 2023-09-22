@@ -18,6 +18,11 @@ header {
 
 .headeraH1 {
     margin: 0;
+
+}
+
+.headeraH1 nav {
+position: sticky; top:0;
 }
 
 .banner {
