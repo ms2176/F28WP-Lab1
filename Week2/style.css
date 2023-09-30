@@ -10,8 +10,8 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #282689;
-    color: #fff;
+    background-color: palegoldenrod;
+    color: black;
     text-align: center;
     padding: 20px;
     position: sticky;
@@ -148,7 +148,7 @@ main h3 {
 .cta-container {
     text-align: center;
     padding: 40px;
-    background-color: pink;
+    background-color: navajowhite;
     margin-top: 30px;
     font-size: 15px;
 }
