@@ -14,13 +14,12 @@ header {
     color: #fff;
     text-align: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
 }
 
 .headeraH1 {
     margin: 0;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
 }
 
 .banner {
