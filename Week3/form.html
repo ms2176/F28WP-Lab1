@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&display=swap');
+    </style>
+</head>
+<body>
+<div>
+    <h1>User Registration</h1>
+    <form id="userRegistrationForm"></form>
+    <div class ="input-control">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <div class="error" id="usernameError"></div>
+</div>
+<div class="input-control">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+    <div class="error" id="emailError"></div>
+</div>
+<div class="input-control"> 
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <div class="error" id="passwordError"></div>
+</div>
+<div class="input-control">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" name="confirmPassword">
+    <div class="error" id="confirmPasswordError"></div>
+</div>
+<button type="submit">Submit</button>
+</form>
+</div>    
+<script src="javascript.js"></script>
+</body>
+</html>
