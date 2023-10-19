@@ -1,0 +1,27 @@
+SLIDESHOW
+
+For the HTML part, the main container had multiple div elements with each one reperesenting
+slides in my slideshow, there is a total of 8. Each slide includes a div with the class 'numbertext',
+this displays the number of the slide and an 'img' element to display the image.
+The 'prev' and 'next' navigation is set up. 
+
+For JavaScript, 'slideIndex' keeps track of the current slide displayed, which is inititally set to 1.
+'showSlides(n)' function manages the slide visibility, hides it according and displays the one with the 
+index set by 'n'. 
+'plusSlides(n)' function increments or decrements the index.
+
+One of the challenges I faced was moving from the last slide to the first, I implemented conditional checking
+in the 'plusSlides(n)' function and thus, if the user goes past the last slide, the index is again set to 1 (first slide),
+and if the user goes before the first slide, the index is set to the last.
+
+FORM
+
+For the HTML part, I created a form with fields for Username, Email, Password and Confirm Password. Each field
+has a placeholder for error messages having a class of '.error'. 
+
+For real-time validation, I used JavaScript. Prevented form submittion unless validation criteria is met. Error messages are displayed below the respective input fields.
+Success indicators are applied when the input is correct. Error indicators and error messages are shown when the input is incorrect.
+
+I successfully integrated the registration form into a pop-up modal that is triggered when the user clicks the "Contact Us Now" button in the call-to-action section.
+
+It was a challenge to integrate the modal. Ensured it's triggered when "Contact Us" button is clicked and closes when clicked outside.

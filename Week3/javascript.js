@@ -9,20 +9,21 @@ const emailError = document.getElementById('emailError');
 const confirmPasswordError = document.getElementById('confirmPasswordError');
 
 function invalidInput(input, errorElement, message){
-    input.classList.add('invalid');
+    input.classList.add('error');
     errorElement.innerText = message;
 }
 
-function validInput(input, errorElement){
-    input.classList.remove('invalid');
-    errorElement.innerText = '';
+function validInput(input, errorElement, validmessage){
+    input.classList.remove('error');
+    input.classList.add('sucess-border');
+    errorElement.innerText = validmessage;
 }
 
 function checkUsername(){
     if(username.value.trim() === ''){
         invalidInput(username, usernameError, 'Username cannot be blank');
     } else {
-        validInput(username, usernameError);
+        validInput(username, usernameError, 'Username is valid');
     }
 }
 
@@ -33,7 +34,7 @@ function checkEmail(){
         invalidInput(email, emailError, 'Email must contain @');
     }
     else {
-        validInput(email, emailError);
+        validInput(email, emailError, 'Email is valid');
     }
 }
 
@@ -43,7 +44,7 @@ function checkPassword(){
     } else if(password.value.length < 8){
         invalidInput(password, passwordError, "Password must be at least 8 characters long");
     } else {
-        validInput(password, passwordError);
+        validInput(password, passwordError, 'Password is valid');
     }
 }
 
@@ -52,8 +53,11 @@ function checkConfirmPassword(){
         invalidInput(confirmPassword, confirmPasswordError, 'Confirm Password cannot be blank');
     } else if(confirmPassword.value !== password.value){
         invalidInput(confirmPassword, confirmPasswordError, 'Passwords do not match');
-    } else {
-        validInput(confirmPassword, confirmPasswordError);
+    } else if (confirmPassword.value == password.value){
+        validInput(confirmPassword, confirmPasswordError, 'Passwords match');
+    }
+    else {
+        validInput(confirmPassword, confirmPasswordError, 'Password is valid');
     }
 }
 
@@ -79,27 +83,22 @@ email.addEventListener("blur", checkEmail);
 password.addEventListener("blur", checkPassword);
 confirmPassword.addEventListener("blur", checkConfirmPassword);
 
-/*SLIDESHOW*/
+// MODAL CODE
 
-let slideIndex = 1;
+const modal = document.getElementById("formModal");
+const closeButton = document.getElementById("close");
+const ctaButton = document.querySelector(".cta-button");
 
-showSlides(slideIndex);
+ctaButton.addEventListener("click", () => {
+    modal.style.display = "block";
+});
 
-function plusSlides(n){
-    showSlides(slideIndex += n);
-}
+closeButton.addEventListener("click", () => {
+    modal.style.display = "none";
+});
 
-function showSlides(n){
-    const slides = document.getElementsByClassName("mySlides");
-    
-    if(n > slides.length){
-        slideIndex = 1;
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
     }
-    if(n < 1){
-        slideIndex = slides.length;
-    }
-    for(let i = 0; i < slides.length; i++){
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
-}
+});
