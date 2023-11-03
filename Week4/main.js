@@ -26,7 +26,7 @@ var myCities = [
 
 console.log(myCities[1].country); // Outputs: Italy
 
-//updated - second loop
+//final
 
 var cityContainer = document.getElementById("city-info");
 var btn = document.getElementById("btn");
